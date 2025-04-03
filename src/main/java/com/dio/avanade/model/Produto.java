@@ -1,4 +1,4 @@
-package com.dio.model;
+package com.dio.avanade.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
