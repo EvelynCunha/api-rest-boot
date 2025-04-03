@@ -1,15 +1,17 @@
 package com.dio.avanade;
 
-import org.springdoc.core.annotations.OpenAPIDefinition;
-import org.springdoc.core.annotations.Info;
+import io.swagger.v3.oas.models.info.Info;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@OpenAPIDefinition(info = @Info(
-        title = "API de Produtos",
-        version = "v1",
-        description = "Documentação da API REST para o gerenciamento de produtos."
-))
 public class OpenApiConfig {
 
+    @Bean
+    public Info customOpenAPI() {
+        return new Info()
+                .title("Minha API")
+                .version("v1")
+                .description("API para produtos");
+    }
 }

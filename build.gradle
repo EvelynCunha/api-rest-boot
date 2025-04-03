@@ -8,13 +8,19 @@ group = 'com.dio.avanade'
 version = '0.0.1-SNAPSHOT'
 
 java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
-	}
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 }
 
 repositories {
 	mavenCentral()
+	maven {
+		url = uri("https://company/com/maven2")
+	}
+	mavenLocal()
+	flatDir {
+		dirs "libs"
+	}
 }
 
 dependencies {
@@ -24,15 +30,19 @@ dependencies {
 	implementation 'jakarta.persistence:jakarta.persistence-api:3.1.0'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-logging'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'mysql:mysql-connector-java:8.0.33'
-	implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.8.0'
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-core', version: '1.1.49'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.8.0'
+	implementation 'org.springdoc:springdoc-openapi-core:1.1.49'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '3.4.4'
+	implementation group: 'io.swagger.core.v3', name: 'swagger-annotations', version: '2.2.29'
+	implementation 'io.swagger.core.v3:swagger-annotations:2.2.29'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
