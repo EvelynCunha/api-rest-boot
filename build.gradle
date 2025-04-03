@@ -51,3 +51,8 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+bootJar {
+	archiveBaseName = 'api-rest-boot'  // Nome do seu aplicativo
+	version = '0.1.0'
+}
