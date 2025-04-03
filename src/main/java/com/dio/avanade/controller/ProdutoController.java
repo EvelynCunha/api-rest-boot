@@ -1,7 +1,7 @@
 package com.dio.avanade.controller;
 
-import com.dio.model.Produto;
-import com.dio.repository.ProdutoRepository;
+import com.dio.avanade.model.Produto;
+import com.dio.avanade.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
