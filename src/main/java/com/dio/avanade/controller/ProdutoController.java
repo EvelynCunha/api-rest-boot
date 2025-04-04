@@ -23,4 +23,9 @@ public class ProdutoController {
     public Produto adicionarProduto(@RequestBody Produto produto) {
         return produtoRepository.save(produto);
     }
+
+    @GetMapping("/test")
+    public String test() {
+        return "API está funcionando!";
+    }
 }
