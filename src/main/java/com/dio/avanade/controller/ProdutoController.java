@@ -26,6 +26,6 @@ public class ProdutoController {
 
     @GetMapping("/test")
     public String test() {
-        return "API está funcionando!";
+        return "A API está funcionando! Estou muito feliz com esse projeto da Avanade";
     }
 }
