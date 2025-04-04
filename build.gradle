@@ -50,6 +50,9 @@ tasks.named('test') {
 }
 
 bootJar {
-	archiveBaseName = 'api-rest-boot'  // Nome do seu aplicativo
+	archiveBaseName = 'api-rest-boot'
 	version = '0.1.0'
+	destinationDirectory = file("target")
 }
+
+
