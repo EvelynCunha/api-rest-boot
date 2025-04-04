@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.4.4'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 group = 'com.dio.avanade'
@@ -55,4 +56,33 @@ bootJar {
 	destinationDirectory = file("target")
 }
 
+tasks.register('generateReadme') {
+	doLast {
+		def readmeContent = """# api-rest-boot
+        
+**Descrição:** API que gerencia produtos  
+**Licença:** MIT  
+**Homepage:** [GitHub](https://github.com/EvelynCunha/api-rest-boot)  
 
+## 🚀 Funcionalidades  
+- Cadastro de produtos  
+- Consultas de produtos  
+- Criação e atualização de dados  
+
+## 📦 Dependências principais  
+- Spring Boot  
+- Hibernate  
+- MySQL  
+- SpringDoc OpenAPI  
+
+## 🛠 Como rodar o projeto  
+```sh
+./gradlew bootRun
+📜 Licença
+Este projeto está sob a licença MIT. """
+
+		def readmeFile = file("README.md")
+		readmeFile.text = readmeContent
+		println "✅ README.md gerado com sucesso!"
+	}
+}
